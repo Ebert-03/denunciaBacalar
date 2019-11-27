@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/list"></ion-back-button>    
+    </ion-buttons> -->
+    <ion-title>Denuncia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="enviarDenuncia()">
+    <ion-item>
+      <ion-label ></ion-label>
+      <ion-input placeholder="Nombre del Funcionario" type="text" [(ngModel)]="denuncia.nombreFun" name="nombreFun"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-textarea  placeholder="Nombre del denunciante" [(ngModel)]="denuncia.nombreDenu" name="nombreDenu"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label ></ion-label>
+      <ion-input placeholder="Correo" type="text" [(ngModel)]="denuncia.correo" name="correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-textarea  placeholder="Descripcion de los echos" [(ngModel)]="denuncia.descripcion" name="descripcion"></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-button expand="block" color="success" type="submit">Aceptar</ion-button>
+    <ion-button expand="block" color="danger"  (click)="cancelar()">Cancelar</ion-button>
+  </form>
+
+
+</ion-content>

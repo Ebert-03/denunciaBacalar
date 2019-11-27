@@ -4,24 +4,26 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Denincias
+      Denuncias
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
   <ion-list>
-    <ion-item *ngFor="let item of title">
-      <!-- <ion-icon [name]="item.icon" slot="start"></ion-icon> -->
-      {{item}}
-      <div  class="item-note" slot="end">
-        {{item.note}}
-      </div>
+    <ion-header translucent class="nombre">
+      <ion-toolbar>
+        <ion-title>Denuncias Aceptadas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item class="lista" *ngFor="let denuncia of denuncias.denuncia" translucent (click)="crearDenuncia(denuncia.codigo)"> 
+      <ion-item>
+          <b> {{denuncia.nombre}} </b>
+        </ion-item>
     </ion-item>
   </ion-list>
   
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
+
  
 </ion-content>
