@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { NologinGuard } from './guards/nologin.guard';
 
 const routes: Routes = [
   {
@@ -19,8 +21,9 @@ const routes: Routes = [
     path: 'pagina2',
    loadChildren: () => import('./pagina2/pagina2.module').then(m => m.Pagina2PageModule)
   },
-  { path: 'denuncia/:codigo', loadChildren: './denuncia/denuncia.module#DenunciaPageModule' },
-  { path: 'admi-control', loadChildren: './paginas/admi-control/admi-control.module#AdmiControlPageModule' }
+  { path: 'denuncia/:codigo', loadChildren: './denuncia/denuncia.module#DenunciaPageModule'  },
+
+  { path: 'admi-control', loadChildren: './paginas/admi-control/admi-control.module#AdmiControlPageModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({

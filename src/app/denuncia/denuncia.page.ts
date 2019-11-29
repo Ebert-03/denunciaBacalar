@@ -19,13 +19,12 @@ export class DenunciaPage implements OnInit {
     nombreDenu: '',
     correo: '',
     descripcion: '',
-    tipo: this.codigo,
+    tipo: '',
   };
 
   constructor(private dbServices: DbService, private route: ActivatedRoute, private navCtrl: NavController,
               private loadingController: LoadingController ) { }
 
-  // denuncia = {cod : this.codigo, }
   async enviarDenuncia() {
     const loading = await this.loadingController.create({
       message: 'Guardando...'
@@ -48,7 +47,9 @@ export class DenunciaPage implements OnInit {
     }
   }
   ngOnInit() {
-    this.codigo = this.route.snapshot.paramMap.get('codigo');
+    this.denuncia = {
+      tipo: this.codigo = this.route.snapshot.paramMap.get('codigo'),
+    };
     // console.log(this.codigo);
   }
   cancelar() {

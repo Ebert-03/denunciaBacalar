@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../../service/login.service';
 
 @Component({
   selector: 'app-admi-control',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmiControlPage implements OnInit {
 
-  constructor() { }
+  constructor(private cerrarSesion : LoginService) { }
 
   ngOnInit() {
+  }
+  salir() {
+    this.cerrarSesion.salir();
   }
 
 }
