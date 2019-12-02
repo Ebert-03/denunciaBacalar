@@ -9,8 +9,18 @@ import { AdmiControlPage } from './admi-control.page';
 
 const routes: Routes = [
   {
+    path: './admi-control',
+    component: AdmiControlPage,
+    children: [
+      { path: 'tab1', loadChildren: './paginas/tab1/tab1.module#Tab1PageModule' },
+      { path: 'tab2', loadChildren: './paginas/tab2/tab2.module#Tab2PageModule' },
+      { path: 'tab3', loadChildren: './paginas/tab3/tab3.module#Tab3PageModule' },
+    ]
+  },
+  {
     path: '',
-    component: AdmiControlPage
+    redirectTo: './admi-control/tab1',
+    pathMatch: 'full'
   }
 ];
 

@@ -23,7 +23,7 @@ export class AppComponent {
     },
     {
       title: 'Administrador',
-      url: '/pagina2',
+      url: '/login',
       icon: 'person'
     },
   ];

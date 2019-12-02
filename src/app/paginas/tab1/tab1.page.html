@@ -1,0 +1,14 @@
+<ion-content >
+  <ion-list>
+    <ion-list-header>
+      Negligencia
+    </ion-list-header>
+    <ion-item  *ngFor="let registros of todo " >
+      <ion-label *ngIf="registros.tipo=='T1'">
+        <h2>{{registros.tipo}}</h2>
+        <!-- <h3>{{registros.fecha}}</h3> -->
+        <p> {{registros.descripcion}} </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

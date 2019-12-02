@@ -18,12 +18,16 @@ const routes: Routes = [
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
   {
-    path: 'pagina2',
-   loadChildren: () => import('./pagina2/pagina2.module').then(m => m.Pagina2PageModule)
+    path: 'login',
+   loadChildren: () => import('./paginas/login/login.module').then(m => m.LoginPageModule)
   },
   { path: 'denuncia/:codigo', loadChildren: './denuncia/denuncia.module#DenunciaPageModule'  },
 
-  { path: 'admi-control', loadChildren: './paginas/admi-control/admi-control.module#AdmiControlPageModule', canActivate: [AuthGuard] }
+  { path: 'admi-control', loadChildren: './paginas/admi-control/admi-control.module#AdmiControlPageModule', canActivate: [AuthGuard] },
+  { path: 'tab1', loadChildren: './paginas/tab1/tab1.module#Tab1PageModule' },
+  { path: 'tab2', loadChildren: './paginas/tab2/tab2.module#Tab2PageModule' },
+  { path: 'tab3', loadChildren: './paginas/tab3/tab3.module#Tab3PageModule' },
+
 ];
 
 @NgModule({

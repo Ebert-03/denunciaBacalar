@@ -23,7 +23,7 @@ export class LoginService {
 
   salir() {
     this.Alogin.auth.signOut().then(() => {
-      this.router.navigate(['/pagina2']);
+      this.router.navigate(['/login']);
     });
   }
 }

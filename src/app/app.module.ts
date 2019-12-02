@@ -29,9 +29,9 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(db,'denunciabacalar'),
-  AngularFireAuthModule,
-  AngularFirestoreModule
+    AngularFireModule.initializeApp(db, 'denunciabacalar'),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,

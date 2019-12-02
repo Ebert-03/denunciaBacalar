@@ -1,19 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>admiControl</ion-title>
+    <ion-title class="ion-text-left">Administrador</ion-title>
+    <ion-buttons slot="primary" (click)=salir()>
+      <ion-button>Salir
+        <ion-icon name="exit" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-slides>
-    <ion-slide>
-      Eb
-    </ion-slide>
-    <ion-slide>
-        DF
-      </ion-slide>
-  </ion-slides>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="tab1">
+        <!-- <ion-icon name="flash"></ion-icon> -->
+        <ion-label>Registros</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tab2">
+        <!-- <ion-icon name="apps"></ion-icon> -->
+        <ion-label>Análisis</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tab3">
+        <!-- <ion-icon name="apps"></ion-icon> -->
+        <ion-label>Validadas</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
 
-  <ion-button (click)=salir()>salir</ion-button>
+  <!-- <ion-button (click)=salir()>salir</ion-button> -->
 </ion-content>

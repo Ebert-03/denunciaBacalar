@@ -6,6 +6,9 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { DenunciaI } from '../models/denuncia.interface';
 import { DbService } from '../service/db.service';
 
+import {ToastController} from '@ionic/angular';
+
+
 @Component({
   selector: 'app-denuncia',
   templateUrl: './denuncia.page.html',
@@ -23,7 +26,8 @@ export class DenunciaPage implements OnInit {
   };
 
   constructor(private dbServices: DbService, private route: ActivatedRoute, private navCtrl: NavController,
-              private loadingController: LoadingController ) { }
+              private loadingController: LoadingController,
+              private toastController: ToastController ) { }
 
   async enviarDenuncia() {
     const loading = await this.loadingController.create({
@@ -41,18 +45,41 @@ export class DenunciaPage implements OnInit {
         this.denuncia.correo = '';
         this.denuncia.descripcion = '';
         this.denuncia.tipo = '';
-
-        // this.nav.navigateForward('/tabs/tab2');
+        this.presentToastWithOptions();
+        this.navCtrl.navigateForward('/list');
       });
     }
   }
   ngOnInit() {
     this.denuncia = {
       tipo: this.codigo = this.route.snapshot.paramMap.get('codigo'),
+      nombreFun: '',
+      nombreDenu: '',
+      correo: '',
+      descripcion: '',
     };
     // console.log(this.codigo);
   }
   cancelar() {
     this.navCtrl.navigateForward(`list`);
   }
+
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+      header: 'Guardado :',
+      message: 'No. Registro : 0021',
+      position: 'bottom',
+      buttons: [
+          {
+          text: 'Aceptar',
+          role: 'Cancelar',
+          handler: () => {
+            // console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    toast.present();
+  }
+
 }

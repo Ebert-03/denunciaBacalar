@@ -8,7 +8,7 @@ import {LoginService} from '../../service/login.service';
 })
 export class AdmiControlPage implements OnInit {
 
-  constructor(private cerrarSesion : LoginService) { }
+  constructor(private cerrarSesion: LoginService) { }
 
   ngOnInit() {
   }
