@@ -24,9 +24,9 @@ const routes: Routes = [
   { path: 'denuncia/:codigo', loadChildren: './denuncia/denuncia.module#DenunciaPageModule'  },
 
   { path: 'admi-control', loadChildren: './paginas/admi-control/admi-control.module#AdmiControlPageModule', canActivate: [AuthGuard] },
-  { path: 'tab1', loadChildren: './paginas/tab1/tab1.module#Tab1PageModule' },
-  { path: 'tab2', loadChildren: './paginas/tab2/tab2.module#Tab2PageModule' },
-  { path: 'tab3', loadChildren: './paginas/tab3/tab3.module#Tab3PageModule' },
+  // { path: 'tab1', loadChildren: './paginas/tab1/tab1.module#Tab1PageModule' },
+  // { path: 'tab2', loadChildren: './paginas/tab2/tab2.module#Tab2PageModule' },
+  // { path: 'tab3', loadChildren: './paginas/tab3/tab3.module#Tab3PageModule' },
 
 ];
 
